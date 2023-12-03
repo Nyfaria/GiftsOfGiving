@@ -252,7 +252,7 @@ public class PresentBlock extends BaseEntityBlock {
 
     public static Block getBlockByColor(@Nullable DyeColor pColor) {
         return switch (pColor) {
-            case WHITE -> BlockInit.WHITE_PRESENT.get();
+            case PURPLE -> BlockInit.PURPLE_PRESENT.get();
             case ORANGE -> BlockInit.ORANGE_PRESENT.get();
             case MAGENTA -> BlockInit.MAGENTA_PRESENT.get();
             case LIGHT_BLUE -> BlockInit.LIGHT_BLUE_PRESENT.get();
@@ -267,7 +267,7 @@ public class PresentBlock extends BaseEntityBlock {
             case GREEN -> BlockInit.GREEN_PRESENT.get();
             case RED -> BlockInit.RED_PRESENT.get();
             case BLACK -> BlockInit.BLACK_PRESENT.get();
-            default -> BlockInit.PURPLE_PRESENT.get();
+            default -> BlockInit.WHITE_PRESENT.get(); // White is the default color, though it doesn't do much in this switch
         };
     }
 
