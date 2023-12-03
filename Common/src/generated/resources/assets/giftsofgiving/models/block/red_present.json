@@ -1,0 +1,8 @@
+{
+  "parent": "giftsofgiving:block/present",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "6": "giftsofgiving:block/red_present",
+    "particle": "giftsofgiving:block/red_present"
+  }
+}

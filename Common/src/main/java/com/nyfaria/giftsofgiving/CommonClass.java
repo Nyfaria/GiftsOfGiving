@@ -3,6 +3,8 @@ package com.nyfaria.giftsofgiving;
 import com.nyfaria.giftsofgiving.init.BlockInit;
 import com.nyfaria.giftsofgiving.init.EntityInit;
 import com.nyfaria.giftsofgiving.init.ItemInit;
+import com.nyfaria.giftsofgiving.init.MenuInit;
+import com.nyfaria.giftsofgiving.init.RecipeInit;
 
 // This class is part of the common project meaning it is shared between all supported loaders. Code written here can only
 // import and access the vanilla codebase, libraries used by vanilla, and optionally third party libraries that provide
@@ -17,5 +19,7 @@ public class CommonClass {
         ItemInit.loadClass();
         BlockInit.loadClass();
         EntityInit.loadClass();
+        MenuInit.loadClass();
+        RecipeInit.loadClass();
     }
 }

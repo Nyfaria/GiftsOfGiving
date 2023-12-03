@@ -1,6 +1,7 @@
 package com.nyfaria.giftsofgiving.datagen;
 
 import com.nyfaria.giftsofgiving.Constants;
+import com.nyfaria.giftsofgiving.init.BlockInit;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -9,6 +10,9 @@ import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import java.util.function.Supplier;
+import java.util.stream.Stream;
 
 public class ModItemModelProvider extends ItemModelProvider {
     public ModItemModelProvider(PackOutput generator, ExistingFileHelper existingFileHelper) {
@@ -25,9 +29,26 @@ public class ModItemModelProvider extends ItemModelProvider {
         //         .map(Supplier::get)
         //         .forEach(this::simpleGeneratedModel);
 
-        // Stream.of()
-        //         .map(Supplier::get)
-        //         .forEach(this::simpleBlockItemModel);
+        Stream.of(
+                        BlockInit.BLACK_PRESENT,
+                        BlockInit.BLUE_PRESENT,
+                        BlockInit.BROWN_PRESENT,
+                        BlockInit.CYAN_PRESENT,
+                        BlockInit.GRAY_PRESENT,
+                        BlockInit.GREEN_PRESENT,
+                        BlockInit.LIGHT_BLUE_PRESENT,
+                        BlockInit.LIGHT_GRAY_PRESENT,
+                        BlockInit.LIME_PRESENT,
+                        BlockInit.MAGENTA_PRESENT,
+                        BlockInit.ORANGE_PRESENT,
+                        BlockInit.PINK_PRESENT,
+                        BlockInit.PURPLE_PRESENT,
+                        BlockInit.RED_PRESENT,
+                        BlockInit.WHITE_PRESENT,
+                        BlockInit.YELLOW_PRESENT
+                )
+                .map(Supplier::get)
+                .forEach(this::simpleBlockItemModel);
     }
 
     protected ItemModelBuilder simpleBlockItemModel(Block block) {

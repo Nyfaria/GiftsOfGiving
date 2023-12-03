@@ -5,9 +5,11 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "${mod_id}.refmap.json",
   "mixins": [
+    "AnvilMenuMixin",
+    "PresentBlockEntityMixin"
   ],
   "client": [
-    "com.nyfaria.giftsofgiving.mixin.ExampleMixin"
+    "ExampleMixin"
   ],
   "injectors": {
     "defaultRequire": 1
