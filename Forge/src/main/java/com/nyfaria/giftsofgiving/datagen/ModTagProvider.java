@@ -7,8 +7,10 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.TagsProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -46,6 +48,11 @@ public class ModTagProvider {
                     BlockInit.WHITE_PRESENT,
                     BlockInit.YELLOW_PRESENT
             );
+            tag(TagInit.GLOBAL_CHEST)
+                    .addOptionalTag(new ResourceLocation("forge", "chests"))
+                    .addOptionalTag(new ResourceLocation("c", "chests"))
+                    .add(ForgeRegistries.ITEMS.getResourceKey(Items.CHEST).get())
+            ;
         }
 
         public void populateTag(TagKey<Item> tag, Supplier<? extends ItemLike>... items) {
