@@ -8,11 +8,11 @@
     "${mod_authors}"
   ],
   "license": "ARR",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/${mod_id}/gog_logo.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.nyfaria.giftsofgiving.GiftsOfGIving"
+      "com.nyfaria.giftsofgiving.GiftsOfGiving"
     ],
     "client": [
       "com.nyfaria.giftsofgiving.GiftsOfGivingClient"

@@ -4,7 +4,7 @@ import com.nyfaria.giftsofgiving.init.EntityInit;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 
-public class GiftsOfGIving implements ModInitializer {
+public class GiftsOfGiving implements ModInitializer {
 
     @Override
     public void onInitialize() {
