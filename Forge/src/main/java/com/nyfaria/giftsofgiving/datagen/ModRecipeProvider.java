@@ -33,9 +33,9 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("###")
                 .pattern("#X#")
                 .pattern("###")
-                .define('X', Tags.Items.CHESTS)
+                .define('X', TagInit.GLOBAL_CHEST)
                 .define('#', Items.PAPER)
-                .unlockedBy("has_chest", has(Tags.Items.CHESTS))
+                .unlockedBy("has_chest", has(TagInit.GLOBAL_CHEST))
                 .save(recipeSaver);
 
     }
