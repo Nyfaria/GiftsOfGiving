@@ -13,6 +13,8 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -37,6 +39,23 @@ public class BlockInit {
     public static final RegistryObject<PresentBlock> RED_PRESENT = registerBlock("red_present", () -> new PresentBlock(DyeColor.RED, BlockBehaviour.Properties.of().strength(1.0f, 1.0f).sound(SoundType.WOOL).noOcclusion()));
     public static final RegistryObject<PresentBlock> BLACK_PRESENT = registerBlock("black_present", () -> new PresentBlock(DyeColor.BLACK, BlockBehaviour.Properties.of().strength(1.0f, 1.0f).sound(SoundType.WOOL).noOcclusion()));
 
+    public static final List<RegistryObject<PresentBlock>> ORDERED_PRESENT_ITEMS = Arrays.asList(
+            WHITE_PRESENT,
+            LIGHT_GRAY_PRESENT,
+            GRAY_PRESENT,
+            BLACK_PRESENT,
+            BROWN_PRESENT,
+            RED_PRESENT,
+            ORANGE_PRESENT,
+            YELLOW_PRESENT,
+            LIME_PRESENT,
+            GREEN_PRESENT,
+            CYAN_PRESENT,
+            BLUE_PRESENT,
+            PURPLE_PRESENT,
+            MAGENTA_PRESENT,
+            PINK_PRESENT
+    );
 
     public static final RegistryObject<BlockEntityType<PresentBlockEntity>> PRESENT_BLOCK_ENTITY = BLOCK_ENTITIES.register("present_block_entity", () -> BlockEntityType.Builder.of(PresentBlockEntity::new,
             BlockInit.WHITE_PRESENT.get(),
@@ -56,18 +75,22 @@ public class BlockInit {
             BlockInit.RED_PRESENT.get(),
             BlockInit.BLACK_PRESENT.get()
     ).build(null));
+
     public static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         return registerBlock(name, block, b -> () -> new BlockItem(b.get(), ItemInit.getItemProperties()));
     }
+
     protected static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, Function<RegistryObject<T>, Supplier<? extends BlockItem>> item) {
         var reg = BLOCKS.register(name, block);
         ItemInit.ITEMS.register(name, () -> item.apply(reg).get());
         return reg;
     }
+
     public static <T extends Block> RegistryObject<T> registerBlockWithoutItem(String name, Supplier<T> block) {
         var reg = BLOCKS.register(name, block);
         return reg;
     }
+
     public static void loadClass() {
     }
 }

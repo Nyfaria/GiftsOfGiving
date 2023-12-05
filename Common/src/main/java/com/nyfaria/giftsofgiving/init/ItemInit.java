@@ -17,7 +17,7 @@ public class ItemInit {
             .icon(() -> new ItemStack(BlockInit.WHITE_PRESENT.get()))
             .displayItems(
                     (itemDisplayParameters, output) -> {
-                        ITEMS.getEntries().forEach((registryObject) -> output.accept(new ItemStack(registryObject.get())));
+                        BlockInit.ORDERED_PRESENT_ITEMS.forEach((registryObject) -> output.accept(new ItemStack(registryObject.get())));
                     }).title(Component.translatable("itemGroup." + Constants.MODID + ".tab"))
             .build());
 
