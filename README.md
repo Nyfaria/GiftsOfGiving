@@ -1,4 +1,4 @@
-![gift-banner](https://github.com/Nyfaria/GiftsOfGiving/assets/94301223/6cb88d7f-b9c1-417c-a717-7afb4723bcc6)
+![gog-banner-new](https://github.com/Nyfaria/GiftsOfGiving/assets/94301223/d301b182-6a3d-4c57-bdb8-065ab21fa59c)
 
 **Gifts of Giving** is a simple mod made for this year's Christmas, but can still be used year-round!
 
