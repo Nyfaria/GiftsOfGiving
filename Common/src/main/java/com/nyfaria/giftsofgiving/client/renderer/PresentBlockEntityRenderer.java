@@ -23,6 +23,7 @@ public class PresentBlockEntityRenderer implements BlockEntityRenderer<PresentBl
     public void render(PresentBlockEntity presentBlockEntity, float v, PoseStack poseStack, MultiBufferSource multiBufferSource, int i, int i1) {
         int lightAbove = LevelRenderer.getLightColor(Minecraft.getInstance().level, presentBlockEntity.getBlockPos());
 
+        // Controls name rendering
         renderNameTag(presentBlockEntity, Component.translatable(Constants.MODID + ".container.present3", presentBlockEntity.getDisplayName(),presentBlockEntity.getGiftGiverName()).withStyle(ChatFormatting.WHITE), poseStack, multiBufferSource, lightAbove);
     }
 
